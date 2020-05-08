@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
 
 type Log struct {
-	Id       bson.ObjectId       `bson:"_id"`
-	Timstamp bson.MongoTimestamp `bson:"timestamp,omitempty"`
-	Level    string              `bson:"level,omitempty"`
-	Message  string              `bson:"message,omitempty"`
+	Id       bson.ObjectId `bson:"_id"`
+	Timstamp time.Time     `bson:"timestamp,omitempty"`
+	Level    string        `bson:"level,omitempty"`
+	Message  string        `bson:"message,omitempty"`
 }
 
 func main() {
